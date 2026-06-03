@@ -31,27 +31,19 @@ function App() {
   };
 
   useEffect(() => {
-    // 1. Prevent browser from trying its own scroll restoration
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
 
-    // 2. Setup a global refresh for when images/fonts finish loading
     const handleLoad = () => ScrollTrigger.refresh();
     window.addEventListener("load", handleLoad);
 
     const lastPosition = sessionStorage.getItem("scrollPosition");
 
     if (lastPosition && lenis) {
-      // 3. Force GSAP to calculate heights (especially Journey pins) before the jump
       ScrollTrigger.refresh();
+      lenis.scrollTo(parseInt(lastPosition), { immediate: true });
 
-      // 4. Perform the instant jump
-      lenis.scrollTo(parseInt(lastPosition), {
-        immediate: true,
-      });
-
-      // 5. Short delay to ensure the browser has finished the jump before revealing content
       const timer = setTimeout(() => {
         setIsLoaded(true);
       }, 100);
@@ -61,6 +53,9 @@ function App() {
         window.removeEventListener("load", handleLoad);
       };
     }
+
+    // ← this is the fix: no saved position = just show the page
+    setIsLoaded(true);
 
     return () => window.removeEventListener("load", handleLoad);
   }, [lenis]);
