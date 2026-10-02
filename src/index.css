@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Georgia Pro Cond";
+  src: url("/fonts/GeorgiaProCond-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia Pro Light";
+  src: url("/fonts/GeorgiaPro-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Georgia Pro Semibold";
+  src: url("/fonts/GeorgiaPro-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --swiper-navigation-color: #ffffff;
+  --swiper-theme-color: #ffffff;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: clip;
+  width: 100%;
+}
+
+/* fonts */
+.georgia-pro-semibold {
+  font-family: "Georgia Pro Semibold", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.georgia-pro-cond-italic {
+  font-family: "Georgia Pro Cond", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+.georgia-pro-light {
+  font-family: "Georgia Pro Light", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+.sora-light {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+.sora {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-serif-regular {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-serif-bold-italic {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: italic;
+}
